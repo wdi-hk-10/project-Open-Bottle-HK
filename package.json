@@ -1,5 +1,5 @@
 {
-  "name": "hapi-template",
+  "name": "hapi-template",  //CHANGE THIS TO MY DATABSE OPEN-BOTTLE NAME
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
