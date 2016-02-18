@@ -1,22 +1,21 @@
 {
-  "name": "hapi-template",  //CHANGE THIS TO MY DATABSE OPEN-BOTTLE NAME
+  "name": "project-open-bottle-hk",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a template for using hapi.",
   "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmtaubman/project-Open-Bottle-HK.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^0.8.5",
-    "handlebars": "^4.0.5",
-    "hapi": "^13.0.0",
-    "hapi-mongodb": "^5.0.0",
-    "inert": "^3.2.0",
-    "joi": "^7.3.0",
-    "path": "^0.12.7",
-    "vision": "^4.0.1",
-    "yar": "^7.0.0"
-  }
+  "bugs": {
+    "url": "https://github.com/cmtaubman/project-Open-Bottle-HK/issues"
+  },
+  "homepage": "https://github.com/cmtaubman/project-Open-Bottle-HK#readme"
 }
