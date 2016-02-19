@@ -16,14 +16,13 @@ exports.register = function (server, options, next) {
       path: '/',
       handler: function(request, reply) {
         Authenticated(request, function (result) {
-          var bars = [{
-            image: "http://hongkong.peninsula.com/en/~/media/Images/Hong-Kong/dining/the-bar/phk-the-bar-interior-1074b.ashx?mw=952",
-            name: "Dragon",
-            location: "LKF",
-            deal: "50% off"
-          }];
-          // need to have authenticated inorder to show signout button
-          reply.view('static_pages/home', {bars: bars, authenticated: result.authenticated}).code(200);
+          var db = request.server.plugins['hapi-mongodb'].db;
+          db.collection('bars').find().toArray(function (err, bars) {
+            if (err) { return reply(err); }
+
+            // need to have authenticated inorder to show signout button
+            reply.view('static_pages/home', {bars: bars, authenticated: result.authenticated}).code(200);
+          });
         });
       }
     }
