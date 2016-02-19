@@ -11,9 +11,18 @@ $(document).ready(function () {
     });
   };
 
+  var bindSignin = function () {
+
+  }
+
   var init = function () {
     bindSignout();
   };
 
   init();
 });
+
+
+
+
+
