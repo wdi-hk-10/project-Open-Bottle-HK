@@ -16,8 +16,14 @@ exports.register = function (server, options, next) {
       path: '/',
       handler: function(request, reply) {
         Authenticated(request, function (result) {
-          var data = result; // need to have authenticated inorder to show signout button
-          reply.view('static_pages/home', data).code(200);
+          var bars = [{
+            image: "http://hongkong.peninsula.com/en/~/media/Images/Hong-Kong/dining/the-bar/phk-the-bar-interior-1074b.ashx?mw=952",
+            name: "Dragon",
+            location: "LKF",
+            deal: "50% off"
+          }];
+          // need to have authenticated inorder to show signout button
+          reply.view('static_pages/home', {bars: bars, authenticated: result.authenticated}).code(200);
         });
       }
     }
