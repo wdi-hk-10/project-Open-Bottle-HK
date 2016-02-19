@@ -1,0 +1,37 @@
+#home-page-header {
+  height: 350px;
+  background-image: url("http://shafir.info/shafir_images/10Album/22Hong_Kong~10Volume_3~105Night~100Kowloon_1%5E1920x.jpg");
+  background-size: 100%;
+  background-position: cover;
+}
+
+
+#home-filter-bar {
+  margin-top:-20px;
+}
+
+#home-opennow {
+  background: black;
+  width: 75%;
+  height: 50px;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  color: black;
+  font-size: 24px;
+}
