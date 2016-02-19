@@ -12,7 +12,7 @@ exports.register = function(server, options, next) {
         handler: function(request, reply) {
           var db = request.server.plugins['hapi-mongodb'].db;
           var user = request.payload;
-
+          console.log(user);
           // query to find existing user
           var uniqUserQuery = { $or: [{username: user.username}, {email: user.email}] };
 
