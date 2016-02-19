@@ -36,13 +36,13 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             {{#unless authenticated}}
-            <button class ="btn btn-default" data-toggle="modal" data-target="#myModal">Sign Up</a>
+            <button id="signup-btn" class ="btn btn-default" data-toggle="modal" data-target="#signUpModal">Sign Up</a>
   <!--      Changing the above code from a-href to modal function: CHANGE THE AHREF TO button class, go to Bootstrap website, check out usage in bootstrap modal (IN JS section) add the classes data toggle data target into the above as attributes after class, and then also copy paste the launch demo modal code into the layout underneath the nav -->
             {{/unless}}
           </li>
           <li>
             {{#unless authenticated}}
-            <button class ="btn btn-default" data-toggle="modal" data-target="#myModal">Sign In</a>
+            <button id="signin-btn" class ="btn btn-default" data-toggle="modal" data-target="#signInModal">Sign In</a>
             {{/unless}}
           </li>
           <li>
@@ -55,16 +55,53 @@
     </div><!-- /.container-fluid -->
   </nav>
 <!-- MODAL included below -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          <h4 class="modal-title" id="myModalLabel">Sign in</h4>
         </div>
         <div class="modal-body">
-          ...
+          <div class="row">
+<!--             <div class="col-xs-6">Left</div> -->
+              <form id="signIn">
+                <input type="username" name="name" placeholder="name"><br>
+                <input type="password" name="password" placeholder="password"><br>
+                <input type="submit" name"Sign up" class="btn-btn-default">
+              </form>
+<!--             <div class="col-xs-6">Right</div> -->
+          </div>
         </div>
+
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Register now</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+<!--             <div class="col-xs-6">Left</div> -->
+              <form id="signUp">
+                <input type="email" name="email" placeholder="email"><br>
+                <input type="username" name="name" placeholder="name"><br>
+                <input type="password" name="password" placeholder="password"><br>
+                <input type="submit" name"Sign up" class="btn-btn-default">
+              </form>
+<!--             <div class="col-xs-6">Right</div> -->
+          </div>
+        </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
@@ -72,7 +109,6 @@
       </div>
     </div>
   </div>
-
 
   {{{content}}}
 </body>
