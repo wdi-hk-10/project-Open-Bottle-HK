@@ -15,11 +15,21 @@ $(document).ready(function () {
   var bindSignin = function () {
     $('#signIn').on('submit', function (e) {
       e.preventDefault();
+
+      var user = {
+        username:   $('#signIn [name="username"]').val(),
+        password:   $('#signIn [name="password"]').val(),
+      }
+
       $.ajax({
         type: "POST",
         url: "/api/signin",
+        data: user,
         success: function (response) {
           window.location.href = '/';
+        },
+        error: function (response) {
+          console.log(response);
         }
       });
     });
