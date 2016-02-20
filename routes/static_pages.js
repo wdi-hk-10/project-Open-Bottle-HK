@@ -25,7 +25,23 @@ exports.register = function (server, options, next) {
           });
         });
       }
-    }
+    },
+    { // Home Page
+      method: 'GET',
+      path: '/user',
+      handler: function(request, reply) {
+        Authenticated(request, function (result) { //need to change this to ensure user is authenticated however
+          var db = request.server.plugins['hapi-mongodb'].db;
+          db.collection('users').find().toArray(function (err, users) {
+            if (err) { return reply(err); }
+
+            // need to have authenticated inorder to show signout button
+            reply.view('static_pages/user', {users: users, authenticated: result.authenticated}).code(200);
+          });
+        });
+      }
+    },
+
 
   ]);
 

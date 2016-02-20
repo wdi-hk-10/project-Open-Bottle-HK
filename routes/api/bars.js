@@ -1,5 +1,5 @@
 var Joi   = require('joi');
-var Auth  = require('./auth');
+var Authenticated = require("../modules/Authenticated.js");
 
 exports.register = function (server, options, next) {
   server.route([
@@ -14,8 +14,29 @@ exports.register = function (server, options, next) {
           reply(results).code(200);
         });
       }
+    },
+    { // Get ONE bar
+      method: 'GET',
+      path: '/bars/{id}',
+      handler: function (request, reply) {
+        Authenticated(request, function (result) {
+          console.log(request);
+          var db = request.server.plugins['hapi-mongodb'].db;
+          var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
+
+          var id = ObjectID(request.params.id);
+
+          db.collection('bars').findOne({"_id": id}, function (err, bar) {
+            if (err) { return reply(err); }
+            // reply(results).code(200);
+            reply.view('static_pages/bars', {bar: bar, authenticated: result.authenticated}).code(200);
+          });
+        });
+      }
     }
   ]);
+
+
 
 //     //GET USER'S BOOKMARKS
 //     {

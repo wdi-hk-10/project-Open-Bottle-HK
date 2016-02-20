@@ -4,6 +4,7 @@
   "description": "This is a template for using hapi.",
   "main": "index.js",
   "dependencies": {
+    "bootstrap-select": "^1.10.0",
     "ejs": "^2.4.1"
   },
   "devDependencies": {},

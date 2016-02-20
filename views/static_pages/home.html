@@ -1,11 +1,44 @@
 <script src="/public/js/static_pages/home.js"></script>
 <link rel="stylesheet" href="/public/css/static_pages/home.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 
 
 <div id="home-page-header">
-  <div id="home-filter-bar">
+  <div class="row">
+    <div id="home-filter-bar">
     <h1>Filter bar goes here</h1>
+      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">Happy</option>
+        <option data-icon="glyphicon-heart">Sad</option>
+        <option data-icon="glyphicon-heart">Suicidal</option>
+        <option data-icon="glyphicon-heart">Depressed</option>
+      </select>
+      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">Second one</option>
+        <option data-icon="glyphicon-heart">Sad</option>
+        <option data-icon="glyphicon-heart">Suicidal</option>
+        <option data-icon="glyphicon-heart">Depressed</option>
+      </select>
+      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">Third one</option>
+        <option data-icon="glyphicon-heart">Sad</option>
+        <option data-icon="glyphicon-heart">Suicidal</option>
+        <option data-icon="glyphicon-heart">Depressed</option>
+      </select>
+      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">Fourth one</option>
+        <option data-icon="glyphicon-heart">Sad</option>
+        <option data-icon="glyphicon-heart">Suicidal</option>
+        <option data-icon="glyphicon-heart">Depressed</option>
+      </select>
+      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">Fifth one</option>
+        <option data-icon="glyphicon-heart">Sad</option>
+        <option data-icon="glyphicon-heart">Suicidal</option>
+        <option data-icon="glyphicon-heart">Depressed</option>
+      </select>
+    </div>
   </div>
 </div>
 
@@ -17,7 +50,7 @@
     <% bars.forEach(function(elem){ %>
       <div class="col-lg-4 xs-12">
         <div class="thumbnail">
-          <a href="#"><img src="<%= elem.image %>" alt=""></a>
+          <a href="/bars/<%=elem._id%>"><img src="<%= elem.image %>" alt=""></a>
           <span><p><%= elem.name %></p></span>
           <span><p><%= elem.location %></p></span>
           <span><p><%= elem.deal %></p></span>

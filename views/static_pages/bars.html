@@ -3,4 +3,77 @@
 
 
 
-THIS IS THE INDIVIDUAL BAR PAGE
+<div id="bar-page-header">
+  <div id="bar-filter-bar">
+    <h1>Filter bar goes here</h1>
+    <h1>Filter bar goes here</h1>
+      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">Happy</option>
+        <option data-icon="glyphicon-heart">Sad</option>
+        <option data-icon="glyphicon-heart">Suicidal</option>
+        <option data-icon="glyphicon-heart">Depressed</option>
+      </select>
+      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">Second one</option>
+        <option data-icon="glyphicon-heart">Sad</option>
+        <option data-icon="glyphicon-heart">Suicidal</option>
+        <option data-icon="glyphicon-heart">Depressed</option>
+      </select>
+      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">Third one</option>
+        <option data-icon="glyphicon-heart">Sad</option>
+        <option data-icon="glyphicon-heart">Suicidal</option>
+        <option data-icon="glyphicon-heart">Depressed</option>
+      </select>
+      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">Fourth one</option>
+        <option data-icon="glyphicon-heart">Sad</option>
+        <option data-icon="glyphicon-heart">Suicidal</option>
+        <option data-icon="glyphicon-heart">Depressed</option>
+      </select>
+      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">Fifth one</option>
+        <option data-icon="glyphicon-heart">Sad</option>
+        <option data-icon="glyphicon-heart">Suicidal</option>
+        <option data-icon="glyphicon-heart">Depressed</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div id="bar-details">
+  <div class="container-fluid">
+  <div class="bar-name-row">
+      <div class="col-lg-12 xs-12">
+        <span><h2><%= bar.name %></h2></span>
+        <span><h3><%= bar.location %></h3></span>
+      </div>
+  </div>
+
+  <div class="bar-images-row">
+    <div class="col-lg-6 xs-6">
+      <img src="<%= bar.image %>" alt="">
+    </div>
+    <div class="col-lg-6 xs-6">
+      <img src="<%= bar.image %>" alt=""> <!-- WOULD LOVE THIS PIC TO BE FROM FOURSQUARE OR FLICKR???!!!  -->
+    </div>
+  </div>
+
+  <div class="bar-description-row">
+    <div class="col-lg-6 xs-6">
+        <span><h2><%= bar.name %></h2></span>
+        <span><h3><%= bar.location %></h3></span>
+<!--    ADD LOCATION
+        ADD ADDRESS
+        ADD DEAL
+        ADD START TIME & ADD END TIME -->
+    </div>
+    <div class="col-lg-6 xs-6"> <!-- GOOGLE MAP IMAGE TO BE INSERTED HERE -->
+        <img src="http://assets.worldsbestbars.com/bar_425_320/ANI_7D-4900_551d177341d5e.jpg">
+<!--         ADD ADDRESS
+        ADD LOCATION
+        ADD DEAL
+        ADD START TIME & ADD END TIME -->
+    </div>
+  </div>
+</div>
