@@ -70,19 +70,28 @@
   <div class="container-fluid">
   <div class="bar-home-row">
     <% bars.forEach(function(elem){ %>
-      <div class="col-lg-4 xs-12">
+      <div class="col-lg-3 xs-12">
         <div class="thumbnail">
           <a href="/bars/<%=elem._id%>"><img src="<%= elem.image %>" alt=""></a>
           <span><p><%= elem.name %></p></span>
           <span><p><%= elem.location %></p></span>
           <span><p><%= elem.deal %></p></span>
         </div>
-          <span><h3>New deal</h3></span>
+
       </div>
 
     <% }) %>
   </div>
 </div>
+
+<!-- // this was the code for the flickr to get the images to appear in a grid format - can i use this on the above? -->
+<!-- data.items.forEach(function(item, index){
+      var $img = $('<img>').attr('src', item.media.m).addClass('thumbnail');
+      if (index % 4 === 0) {
+        $row = $('<div class="row">').appendTo($images);
+      }
+      var $col = $('<div class="col-lg-3">').appendTo($row);
+      $col.append($img); -->
 
 
 

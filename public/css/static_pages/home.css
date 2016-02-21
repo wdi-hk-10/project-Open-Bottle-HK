@@ -21,11 +21,11 @@
 
 #home-opennow {
   background: black;
-  width: 75%;
+  width: 100%;
   height: 50px;
   color: white;
   text-align: center;
-  margin: -35px;
+  margin: -40px;
 }
 
 .bar-home-row {
