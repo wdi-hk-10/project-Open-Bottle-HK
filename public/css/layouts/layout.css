@@ -2,3 +2,20 @@
   background: black;
   color: white;
 }
+
+#signin-btn {
+  margin-top:8px;
+  margin-right:3px;
+  color: black;
+  font-weight: bold;
+}
+
+#signup-btn {
+  margin-top:8px;
+  margin-left:3px;
+  font-weight: bold;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #F0AD4E;
+}
