@@ -1,5 +1,9 @@
+var Joi   = require('joi');
+var Authenticated = require("../modules/Authenticated.js");
 
-{ // Get ONE bar
+exports.register = function (server, options, next) {
+  server.route([
+      { // Get ONE user
       method: 'GET',
       path: '/users/{id}',
       handler: function (request, reply) {
@@ -17,3 +21,5 @@
           });
         });
       }
+    }
+]);
