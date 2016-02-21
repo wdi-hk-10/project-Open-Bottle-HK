@@ -62,3 +62,22 @@ img {
   height: 272.50px;
   object-fit: cover;
 }
+
+.elem-name>p {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.elem-location>p {
+/*  font-weight: bold;*/
+  font-size:13px;
+  margin-top:-3px;
+}
+
+.elem-deal>p {
+  font-size:12px;
+}
+
+div.thumbnail {
+  height: 405px;
+}
