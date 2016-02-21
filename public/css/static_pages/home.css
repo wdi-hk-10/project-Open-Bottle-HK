@@ -72,10 +72,12 @@ img {
 /*  font-weight: bold;*/
   font-size:13px;
   margin-top:-3px;
+  color: white;
+  background: black;
 }
 
 .elem-deal>p {
-  font-size:12px;
+  font-size:13px;
 }
 
 div.thumbnail {

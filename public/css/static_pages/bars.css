@@ -42,6 +42,26 @@ p {
 
 img {
   object-fit: cover;
-  width:;
+  width:600px;
+  height:400px;
+  padding:none;
 }
+
+div.container-fluid, div.bar-description-row  {
+  margin-left:20px;
+  padding: none;
+  margin-bottom:20px;
+}
+
+div.bar-images-row>img {
+  float:left;
+  padding:none;
+
+}
+
+#bar-image-one {
+  padding:none;
+
+}
+
 
