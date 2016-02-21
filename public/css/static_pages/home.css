@@ -3,11 +3,20 @@
   background-image: url("http://shafir.info/shafir_images/10Album/22Hong_Kong~10Volume_3~105Night~100Kowloon_1%5E1920x.jpg");
   background-size: 100%;
   background-position: cover;
+  margin-top: -20px;
 }
 
 
 #home-filter-bar {
-  margin-top:-20px;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 130px;
+}
+
+#filter-button {
+  color: black;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 #home-opennow {
@@ -16,8 +25,15 @@
   height: 50px;
   color: white;
   text-align: center;
+  margin: -35px;
 }
 
+.bar-home-row {
+  margin-left: 20px;
+}
+body {
+  background-color: #f9eac7;
+}
 h1 {
   color: white;
   text-align: center;
