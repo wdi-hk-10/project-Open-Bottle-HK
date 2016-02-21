@@ -8,36 +8,59 @@
   <div class="row">
     <div id="home-filter-bar">
     <h1>Filter bar goes here</h1>
-      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
-        <option data-icon="glyphicon-heart">Happy</option>
-        <option data-icon="glyphicon-heart">Sad</option>
-        <option data-icon="glyphicon-heart">Suicidal</option>
-        <option data-icon="glyphicon-heart">Depressed</option>
+      <select id="select-day" class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">All days</option>
+        <option class="day-monday">Monday</option>
+        <option class="day-tuesday">Tuesday</option>
+        <option class="day-wednesday">Wednesday</option>
+        <option class="day-thursday">Thursday</option>
+        <option class="day-friday">Friday</option>
+        <option class="day-saturday">Saturday</option>
+        <option class="day-sunday">Sunday</option>
       </select>
-      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
-        <option data-icon="glyphicon-heart">Second one</option>
-        <option data-icon="glyphicon-heart">Sad</option>
-        <option data-icon="glyphicon-heart">Suicidal</option>
-        <option data-icon="glyphicon-heart">Depressed</option>
+      <select id="select-time" class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">All times</option>
+        <option class="time-before5">Before 5pm</option>
+        <option class="time-5pm">5pm</option>
+        <option class="time-6pm">6pm</option>
+        <option class="time-7pm">7pm</option>
+        <option class="time-8pm">8pm</option>
+        <option class="time-9pm">9pm</option>
+        <option class="time-10pm">10pm</option>
+        <option class="time-11pm">11pm</option>
       </select>
-      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
-        <option data-icon="glyphicon-heart">Third one</option>
-        <option data-icon="glyphicon-heart">Sad</option>
-        <option data-icon="glyphicon-heart">Suicidal</option>
-        <option data-icon="glyphicon-heart">Depressed</option>
+      <select id="select-location" class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option data-icon="glyphicon-heart">All locations</option>
+        <option class="loc-central">Central</option>
+        <option class="loc-soho">Soho</option>
+        <option class="loc-ifc">IFC</option>
+        <option class="loc-wanchai">Wan Chai</option>
+        <option class="loc-causewaybay">Causeway Bay</option>
       </select>
-      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
-        <option data-icon="glyphicon-heart">Fourth one</option>
-        <option data-icon="glyphicon-heart">Sad</option>
-        <option data-icon="glyphicon-heart">Suicidal</option>
-        <option data-icon="glyphicon-heart">Depressed</option>
+      <select id="select-price" class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option class="all-prices">All prices</option>
+        <option class="under50">Under 50 HKD</option>
+        <option class="under100">Under 100 HKD</option>
+        <option class="under200">Under 200 HKD</option>
+        <option class="under300">Under 300 HKD</option>
+        <option class="under400">Under 400 HKD</option>
+        <option class="under500">Under 500 HKD</option>
       </select>
-      <select class="selectpicker col-md-2 col-sm-3 col-xs-12">
-        <option data-icon="glyphicon-heart">Fifth one</option>
-        <option data-icon="glyphicon-heart">Sad</option>
-        <option data-icon="glyphicon-heart">Suicidal</option>
-        <option data-icon="glyphicon-heart">Depressed</option>
+      <select id="select-drink"class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option class="all-drink">All drinks</option>
+        <option class="wine">Wine</option>
+        <option class="beer">Beer</option>
+        <option class="champagne">Champagne</option>
+        <option class="spirits">Spirits</option>
       </select>
+      <select id="select-features"class="selectpicker col-md-2 col-sm-3 col-xs-12">
+        <option class="all-features">All features</option>
+        <option class="free-flow">Wine</option>
+        <option class="free-food">Beer</option>
+        <option class="champagne">Champagne</option>
+        <option class="spirits">Spirits</option>
+      </select>
+    <button id="filter-button">Submit</button>
     </div>
   </div>
 </div>
