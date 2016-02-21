@@ -4,8 +4,15 @@
   "description": "This is a template for using hapi.",
   "main": "index.js",
   "dependencies": {
-    "bootstrap-select": "^1.10.0",
-    "ejs": "^2.4.1"
+    "bcrypt": "^0.8.5",
+    "handlebars": "^4.0.5",
+    "hapi": "^13.0.0",
+    "hapi-mongodb": "^5.0.0",
+    "inert": "^3.2.0",
+    "joi": "^7.3.0",
+    "path": "^0.12.7",
+    "vision": "^4.0.1",
+    "yar": "^7.0.0"
   },
   "devDependencies": {},
   "scripts": {
