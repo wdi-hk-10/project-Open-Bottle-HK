@@ -35,7 +35,8 @@ exports.register = function (server, options, next) {
         });
       }
     },
-    { // Get ONE bar
+    { // Get ONE bar - usually we would have this on another bar.js file under routes, however because this project is small we can keep it in pages.js
+
       method: 'GET',
       path: '/bars/{id}',
       handler: function (request, reply) {
@@ -58,7 +59,7 @@ exports.register = function (server, options, next) {
         });
       }
     },
-    { // Get ONE user
+    { // Get ONE user - because we have the authenticated request we don't need the id param
       method: 'GET',
       path: '/profile',
       handler: function (request, reply) {
@@ -69,11 +70,37 @@ exports.register = function (server, options, next) {
             var id = ObjectID(request.params.id);
 
             var data = {
+              //will need to put bookmarks here
               authenticated: result.authenticated,
               user: result.user
             }
 
             reply.view('pages/profile', data).code(200);
+          } else {
+            reply.redirect("/");
+          }
+        });
+      }
+    },
+      { // create a bookmark for the user- use the data value from bookmarked button
+      method: 'POST',
+      path: '/profile/bookmark',
+      handler: function (request, reply) {
+        Authenticated(request, function (result) {
+          if (result.authenticated) {
+            var db = request.server.plugins['hapi-mongodb'].db;
+            var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
+            var id = ObjectID(request.params.id);
+
+            var data = {
+              //will need to put bookmarks here
+              authenticated: result.authenticated,
+              user: result.user,
+              bookmark: result.bookmark
+            }
+
+            reply.view('pages/profile', data).code(200);
+
           } else {
             reply.redirect("/");
           }
@@ -107,7 +134,7 @@ function createSearchQuery (queries) {
   }
 
   if (queries.price) {
-    query.price = queries.price;
+    query.price = { $lte: parseInt(queries.price) };
   }
 
   if (queries.drink) {

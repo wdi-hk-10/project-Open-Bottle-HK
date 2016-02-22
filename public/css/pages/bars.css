@@ -28,7 +28,7 @@ h1 {
 }
 
 h2 {
-  color: black;
+  color: white;
 }
 
 h3 {
@@ -48,10 +48,16 @@ img {
 }
 
 div.container-fluid, div.bar-description-row  {
-  margin-left:20px;
+  margin-left:40px;
   padding: none;
   margin-bottom:20px;
 }
+
+div.bar-images-row {
+/*  margin-left: 30px;*/
+width: 80%;
+}
+
 
 div.bar-images-row>img {
   float:left;
@@ -59,9 +65,11 @@ div.bar-images-row>img {
 
 }
 
-#bar-image-one {
-  padding:none;
+.col-lg-6 {
+  padding-left:0px;
 
 }
 
-
+#bar-image-right {
+  background: white;
+}

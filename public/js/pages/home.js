@@ -12,7 +12,7 @@ $(document).ready(function() {
         drink: $("#select-drink").val(),
         features: $("#select-features").val(),
       };
-
+      // this returns the appropriate query string
       window.location.href = "/?" + $.param(filters);
     })
   }
