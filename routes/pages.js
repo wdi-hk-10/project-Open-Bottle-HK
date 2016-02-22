@@ -15,7 +15,7 @@ exports.register = function (server, options, next) {
       method: 'GET',
       path: '/',
       handler: function(request, reply) {
-        Authenticated(request, function (result) {
+        authenticated(request, function (result) {
           var db = request.server.plugins['hapi-mongodb'].db;
 
           var query = createSearchQuery(request.query);
@@ -40,7 +40,7 @@ exports.register = function (server, options, next) {
       method: 'GET',
       path: '/bars/{id}',
       handler: function (request, reply) {
-        Authenticated(request, function (result) {
+        authenticated(request, function (result) {
           var db = request.server.plugins['hapi-mongodb'].db;
           var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
           var id = ObjectID(request.params.id);
@@ -63,7 +63,7 @@ exports.register = function (server, options, next) {
       method: 'GET',
       path: '/profile',
       handler: function (request, reply) {
-        Authenticated(request, function (result) {
+        authenticated(request, function (result) {
           if (result.authenticated) {
             var db = request.server.plugins['hapi-mongodb'].db;
             var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
@@ -86,7 +86,7 @@ exports.register = function (server, options, next) {
       method: 'POST',
       path: '/profile/bookmark',
       handler: function (request, reply) {
-        Authenticated(request, function (result) {
+        authenticated(request, function (result) {
           if (result.authenticated) {
             var db = request.server.plugins['hapi-mongodb'].db;
             var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;

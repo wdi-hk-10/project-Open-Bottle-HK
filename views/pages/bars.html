@@ -2,101 +2,43 @@
 <link rel="stylesheet" href="/public/css/pages/bars.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"
+         async defer></script>
 
 
-<div id="home-page-header">
-  <div class="row">
-    <div id="home-filter-bar">
-      <select id="select-day" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option data-icon="glyphicon-heart">All days</option>
-        <option class="day-monday">Monday</option>
-        <option class="day-tuesday">Tuesday</option>
-        <option class="day-wednesday">Wednesday</option>
-        <option class="day-thursday">Thursday</option>
-        <option class="day-friday">Friday</option>
-        <option class="day-saturday">Saturday</option>
-        <option class="day-sunday">Sunday</option>
-      </select>
-      <select id="select-time" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option data-icon="glyphicon-heart">All times</option>
-        <option class="time-before5">Before 5pm</option>
-        <option class="time-5pm">5pm</option>
-        <option class="time-6pm">6pm</option>
-        <option class="time-7pm">7pm</option>
-        <option class="time-8pm">8pm</option>
-        <option class="time-9pm">9pm</option>
-        <option class="time-10pm">10pm</option>
-        <option class="time-11pm">11pm</option>
-      </select>
-      <select id="select-location" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option data-icon="glyphicon-heart">All locations</option>
-        <option class="loc-central">Central</option>
-        <option class="loc-soho">Soho</option>
-        <option class="loc-ifc">IFC</option>
-        <option class="loc-wanchai">Wan Chai</option>
-        <option class="loc-causewaybay">Causeway Bay</option>
-      </select>
-      <select id="select-price" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option class="all-prices">All prices</option>
-        <option class="under50">Under 50 HKD</option>
-        <option class="under100">Under 100 HKD</option>
-        <option class="under200">Under 200 HKD</option>
-        <option class="under300">Under 300 HKD</option>
-        <option class="under400">Under 400 HKD</option>
-        <option class="under500">Under 500 HKD</option>
-      </select>
-      <select id="select-drink"class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option class="all-drink">All drinks</option>
-        <option class="wine">Wine</option>
-        <option class="beer">Beer</option>
-        <option class="champagne">Champagne</option>
-        <option class="spirits">Spirits</option>
-      </select>
-      <select id="select-features"class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option class="all-features">All features</option>
-        <option class="free-flow">Wine</option>
-        <option class="free-food">Beer</option>
-        <option class="champagne">Champagne</option>
-        <option class="spirits">Spirits</option>
-      </select>
-    <button id="filter-button" class="btn btn-warning">SUBMIT</button>
+
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12"><span><h2><%= bar.name %></h2></span></div>
     </div>
+    <div class="row">
+      <div class="col-lg-12"><span><h3><%= bar.location %></h3></span></div>
+    </div>
+
+  <div class="container">
+    <div class="row">
+      <div id="first-image" class="col-lg-6">
+        <img src="<%= bar.image %>" alt="">
+      </div>
+      <div id="flickr-image" class="col-lg-6"><span><h2>flickr</h2></span></div>
+    </div>
+
+    <div class="row">
+      <div id="map" class="col-lg-6"><span><h2>map</h2></span></div>
+      <div id="bar-description" class="col-lg-6">
+        <span><h2>bar details</h2></span>
+        <span><p><%= bar.deal %></p></span>
+        <span><h3><%= bar.address %></h3></span>
+      </div>
+    </div>
+
+
+
   </div>
-</div>
 
 
-<div id="bar-details">
-  <div class="container-fluid">
-    <div class="bar-name-row">
-        <div class="col-lg-12 xs-12">
-          <span><h2><%= bar.name %></h2></span>
-          <span><h3><%= bar.location %></h3></span>
-        </div>
-    </div>
-
-    <div class="bar-images-row">
-  <!--     <div class="col-lg-6 xs-6"> -->
-      <div id "bar-image-one" class="col-lg-6 xs-6">
-        <img src="<%= bar.image %>" alt=""></div>
-      <div id "bar-image-right" class="col-lg-6 xs-6">
-         <!-- WOULD LOVE THIS PIC TO BE FROM FOURSQUARE OR FLICKR???!!!  -->
-    </div>
-
-    <div class="bar-description-row">
-      <div class="col-lg-6 xs-6">
-          <span><p><%= bar.deal %></p></span>
-          <span><h3><%= bar.address %></h3></span>
-  <!--    ADD LOCATION
-          ADD ADDRESS
-          ADD DEAL
-          ADD START TIME & ADD END TIME -->
-      </div>
-      <div id "bar-image-two" class="col-lg-6 xs-6"> <!-- GOOGLE MAP IMAGE TO BE INSERTED HERE -->
-          <img src="http://assets.worldsbestbars.com/bar_425_320/ANI_7D-4900_551d177341d5e.jpg">
-  <!--         ADD ADDRESS
-          ADD LOCATION
-          ADD DEAL
-          ADD START TIME & ADD END TIME -->
-      </div>
+  </div>
   </div>
 </div>
