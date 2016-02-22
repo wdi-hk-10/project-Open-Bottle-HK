@@ -90,7 +90,7 @@ exports.register = function (server, options, next) {
           if (result.authenticated) {
             var db = request.server.plugins['hapi-mongodb'].db;
             var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
-            var id = ObjectID(request.query);
+            var id = ObjectID(request.payload);
 
             var data = {
               //will need to put bookmarks here
