@@ -4,6 +4,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js"
          async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
 
 
 
@@ -29,7 +31,7 @@
       <div id="map" class="col-lg-6"><span><h2>map</h2></span></div>
       <div id="bar-description" class="col-lg-6">
         <span><h2>bar details</h2></span>
-        <span><p><%= bar.deal %></p></span>
+        <span><p>Deal: <%= bar.deal %></p></span>
         <span><h3><%= bar.address %></h3></span>
       </div>
     </div>
