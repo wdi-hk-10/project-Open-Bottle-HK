@@ -82,7 +82,7 @@ exports.register = function (server, options, next) {
         });
       }
     },
-      { // create a bookmark for the user- use the data value from bookmarked button
+    { // create a bookmark for the user- use the data value from bookmarked button
       method: 'POST',
       path: '/profile/bookmark',
       handler: function (request, reply) {
@@ -90,7 +90,7 @@ exports.register = function (server, options, next) {
           if (result.authenticated) {
             var db = request.server.plugins['hapi-mongodb'].db;
             var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
-            var id = ObjectID(request.params.id);
+            var id = ObjectID(request.query);
 
             var data = {
               //will need to put bookmarks here
@@ -106,7 +106,7 @@ exports.register = function (server, options, next) {
           }
         });
       }
-    }
+    },
   ]);
 
   next();
