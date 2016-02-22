@@ -1,14 +1,13 @@
-<script src="/public/js/static_pages/home.js"></script>
-<link rel="stylesheet" href="/public/css/static_pages/home.css">
+<script src="/public/js/pages/home.js"></script>
+<link rel="stylesheet" href="/public/css/pages/home.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 
-
 <div id="home-page-header">
   <div class="row">
-    <div id="home-filter-bar">
+    <div id="home-filter-bar"> <!-- WRAP THIS IN A FORM -->
       <select id="select-day" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option data-icon="glyphicon-heart">All days</option>
+        <option data-icon="glyphicon-heart" value="">All days</option>
         <option class="day-monday">Monday</option>
         <option class="day-tuesday">Tuesday</option>
         <option class="day-wednesday">Wednesday</option>
@@ -18,9 +17,9 @@
         <option class="day-sunday">Sunday</option>
       </select>
       <select id="select-time" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option data-icon="glyphicon-heart">All times</option>
+        <option data-icon="glyphicon-heart" value="">All times</option>
         <option class="time-before5">Before 5pm</option>
-        <option class="time-5pm">5pm</option>
+        <option class="time-5pm" value="1700">5pm</option>
         <option class="time-6pm">6pm</option>
         <option class="time-7pm">7pm</option>
         <option class="time-8pm">8pm</option>
@@ -29,15 +28,16 @@
         <option class="time-11pm">11pm</option>
       </select>
       <select id="select-location" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option data-icon="glyphicon-heart">All locations</option>
+        <option data-icon="glyphicon-heart" value="">All locations</option>
         <option class="loc-central">Central</option>
         <option class="loc-soho">Soho</option>
+        <option class="loc-lkf">Lan Kwai Fong</option>
         <option class="loc-ifc">IFC</option>
         <option class="loc-wanchai">Wan Chai</option>
         <option class="loc-causewaybay">Causeway Bay</option>
       </select>
       <select id="select-price" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option class="all-prices">All prices</option>
+        <option class="all-prices" value="">All prices</option>
         <option class="under50">Under 50 HKD</option>
         <option class="under100">Under 100 HKD</option>
         <option class="under200">Under 200 HKD</option>
@@ -46,14 +46,14 @@
         <option class="under500">Under 500 HKD</option>
       </select>
       <select id="select-drink"class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option class="all-drink">All drinks</option>
+        <option class="all-drink" value="">All drinks</option>
         <option class="wine">Wine</option>
         <option class="beer">Beer</option>
         <option class="champagne">Champagne</option>
         <option class="spirits">Spirits</option>
       </select>
       <select id="select-features"class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
-        <option class="all-features">All features</option>
+        <option class="all-features" value="">All features</option>
         <option class="free-flow">Wine</option>
         <option class="free-food">Beer</option>
         <option class="champagne">Champagne</option>
@@ -69,18 +69,21 @@
   HAPPY HOUR DEALS RIGHT NOW IN HK</h3>
   <div class="container-fluid">
   <div class="bar-home-row">
-    <% bars.forEach(function(elem){ %>
-      <div class="col-lg-3 xs-12">
-        <div class="thumbnail">
-          <a href="/bars/<%=elem._id%>"><img src="<%= elem.image %>" alt=""></a>
-          <span class="elem-name"><p><%= elem.name %></p></span>
-          <span class="elem-location"><p><%= elem.location %></p></span>
-          <span class="elem-deal"><p><%= elem.deal %></p></span>
+    <% if (bars) {%>
+      <% bars.forEach(function(elem){ %>
+        <div class="col-lg-3 xs-12">
+          <div class="thumbnail">
+            <a href="/bars/<%=elem._id%>"><img src="<%= elem.image %>" alt=""></a>
+            <span class="elem-name"><p><%= elem.name %></p></span>
+            <span class="elem-location"><p><%= elem.location %></p></span>
+            <span class="elem-deal"><p><%= elem.deal %></p></span>
+            <span class="elem-deal"><button>Bookmark this</button></p></span>
+          </div>
         </div>
-
-      </div>
-
-    <% }) %>
+      <% }) %>
+    <% } else { %>
+<!-- INSERT ERROR MESSAGE NOW -->
+    <% } %>
   </div>
 </div>
 

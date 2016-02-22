@@ -11,8 +11,8 @@ exports.register = function(server, options, next) {
       config: {
         handler: function(request, reply) {
           var db = request.server.plugins['hapi-mongodb'].db;
+          var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
           var user = request.payload;
-          console.log(user);
           // query to find existing user
           var uniqUserQuery = { $or: [{username: user.username}, {email: user.email}] };
 
@@ -25,12 +25,27 @@ exports.register = function(server, options, next) {
             Bcrypt.genSalt(10, function(err, salt) {
               Bcrypt.hash(user.password, salt, function(err, hash) {
                 user.password = hash;
+                user._id = new ObjectID();
 
                 // Store hash in your password DB.
                 db.collection('users').insert(user, function(err, doc) {
                   if (err) { return reply('Internal MongoDB error', err).code(400); }
 
-                  reply(doc).code(200);
+                  var newSession = {
+                    "session_id": randomKeyGenerator(),
+                    "user_id": user._id
+                  };
+
+                  db.collection('sessions').insert(newSession, function(err, result) {
+                    if (err) {
+                      return reply('Internal MongoDB error', err).code(400);
+                    }
+
+                    // Store the Session information in the browser Cookie
+                    request.yar.set('obhk_session', newSession); // CHANGE-ME
+
+                    return reply({ "message:": "Authenticated" }).code(200);
+                  });
                 });
               });
             });

@@ -59,7 +59,7 @@ img {
 }
 
 .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
-  height: 272.50px;
+  height: 274.50px;
   object-fit: cover;
 }
 
@@ -81,5 +81,5 @@ img {
 }
 
 div.thumbnail {
-  height: 405px;
+  height: 425px;
 }
