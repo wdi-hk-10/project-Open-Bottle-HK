@@ -1,3 +1,4 @@
+
 // google map functionality
 function initMap() {
     var mapDiv = document.getElementById('map');
@@ -7,4 +8,4 @@ function initMap() {
     });
   }
 
-initmap();
+// initmap();

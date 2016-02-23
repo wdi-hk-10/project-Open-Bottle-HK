@@ -12,6 +12,7 @@ $(document).ready(function() {
         drink: $("#select-drink").val(),
         features: $("#select-features").val(),
       };
+
       // this returns the appropriate query string
       window.location.href = "/?" + $.param(filters);
     })
@@ -31,7 +32,8 @@ $(document).ready(function() {
         method: "POST",
         data: {bar_id: bar_id},
         success: function (response, status) {
-          console.log (response);
+          console.log(response.message);
+          $("added").html(response.message);
           // window.location.href = "/profile";
         },
         error: function (response, status) {

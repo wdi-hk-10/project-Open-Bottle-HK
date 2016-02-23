@@ -6,6 +6,9 @@
   margin-top: -20px;
 }
 
+#added {
+  color: red;
+}
 
 #home-filter-bar {
   margin: 0 auto;
@@ -21,11 +24,11 @@
 
 #home-opennow {
   background: black;
-  width: 100%;
+/*  width: 100%;*/
   height: 50px;
   color: white;
   text-align: center;
-  margin: -40px;
+  margin: -20px;
 }
 
 .bar-home-row {
@@ -81,9 +84,16 @@ img {
 }
 
 div.thumbnail {
-  height: 425px;
+  height: 450px;
+  position: relative;
+
 }
 
-#elem-bookmark {
+button.elem-bookmark-btn {
   background-color: black;
+  position: absolute;
+/*  top: 100px;*/
+  bottom: 5px;
+  left: 90px;
+  text-align:center;
 }
