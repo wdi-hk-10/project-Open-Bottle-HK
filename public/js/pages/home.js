@@ -23,9 +23,9 @@ $(document).ready(function() {
   var bookmarkedBar = function () {
     $('.elem-bookmark-btn').off().on("click", function (e) {
       e.preventDefault();
-      console.log("hello");
       // bar ID, user ID,
-      var bar_id = $(this).data("id");
+      var $button = $(this);
+      var bar_id = $button.data("id");
 
       $.ajax({
         url: '/api/profile/bookmark',
@@ -33,11 +33,12 @@ $(document).ready(function() {
         data: {bar_id: bar_id},
         success: function (response, status) {
           console.log(response.message);
-          $("added").html(response.message);
+          $button.text(response.message);
           // window.location.href = "/profile";
         },
         error: function (response, status) {
           console.log(response);
+          $button.text(response.responseJSON.message);
         }
       })
     });

@@ -54,10 +54,7 @@
       </select>
       <select id="select-features"class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary">
         <option class="all-features" value="">All features</option>
-        <option class="free-flow">Wine</option>
-        <option class="free-food">Beer</option>
-        <option class="champagne">Champagne</option>
-        <option class="spirits">Spirits</option>
+        <option class="">2 for 1</option>
       </select>
     <button id="filter-button" class="btn btn-warning">SUBMIT</button>
     </div>
@@ -77,7 +74,9 @@
             <span class="elem-name"><p><%= elem.name %></p></span>
             <span class="elem-location"><p><%= elem.location %></p></span>
             <span class="elem-deal"><p><%= elem.deal %></p></span>
-            <span class="elem-bookmark"><button class ="elem-bookmark-btn" data-id="<%= elem._id%>">Bookmark this</button><span class="added"></span></span>
+            <span class="elem-bookmark">
+              <button class ="elem-bookmark-btn" data-id="<%= elem._id%>">Bookmark this</button>
+            </span>
           </div>
         </div>
       <% }) %>

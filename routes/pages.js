@@ -128,5 +128,6 @@ function createSearchQuery (queries) {
     query.features = { $in: [queries.features] };
   }
 
+  console.log(query);
   return query;
 }

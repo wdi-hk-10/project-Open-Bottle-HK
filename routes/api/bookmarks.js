@@ -12,21 +12,32 @@ exports.register = function(server, options, next) {
             var db = request.server.plugins['hapi-mongodb'].db;
             var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
 
-            db.collection('bars').findOne({"_id": ObjectID(request.payload.bar_id)}, function(err, bar){
+            var bar_id = ObjectID(request.payload.bar_id);
+            var user_id = ObjectID(result.user._id);
+
+
+            db.collection('bars').findOne({"_id": bar_id}, function(err, bar){
               if (err) { return reply(err).code(400);}
 
               if (bar === null) { return reply({message: "bar not found"}); }
 
-              var bookmark = {
-                bar: bar,
-                user_id: result.user._id,
-              }
+              db.collection('bookmarks').findOne({"bar._id": bar_id, "user_id": user_id}, function (err, bookmark) {
+                if (err) { return reply(err).code(400);}
 
-              db.collection('bookmarks').insert(bookmark, function(err, doc) {
-                if (err) { return reply('Internal MongoDB error', err).code(400);}
+                if (bookmark === null) {
+                  var bookmark = {
+                    bar: bar,
+                    user_id: user_id,
+                  };
 
-                reply({doc: doc, message: "Added!"}).code(200);
+                  db.collection('bookmarks').insert(bookmark, function(err, doc) {
+                    if (err) { return reply('Internal MongoDB error', err).code(400);}
 
+                    reply({doc: doc, message: "Added!"}).code(200);
+                  });
+                } else {
+                  reply({message: "Already Added!"}).code(400);
+                }
               });
             });
           } else {
