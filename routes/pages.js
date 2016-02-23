@@ -59,54 +59,37 @@ exports.register = function (server, options, next) {
         });
       }
     },
-    { // Get ONE user - because we have the authenticated request we don't need the id param
+    { // get all bookmarks for one user
       method: 'GET',
-      path: '/profile',
+      path: '/profile', //or is this meant to be /profile?
       handler: function (request, reply) {
         authenticated(request, function (result) {
           if (result.authenticated) {
             var db = request.server.plugins['hapi-mongodb'].db;
             var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
-            var id = ObjectID(request.params.id);
 
-            var data = {
-              //will need to put bookmarks here
-              authenticated: result.authenticated,
-              user: result.user
-            }
+            var user_id = ObjectID(result.user._id);
 
-            reply.view('pages/profile', data).code(200);
+            db.collection('bookmarks').find({"user_id": user_id}).toArray(function(err, bookmarks) {
+              if (err) { return reply(err).code(400); }
+
+              var data = {
+                bookmarks: bookmarks,
+                authenticated: result.authenticated,
+                user: result.user
+              };
+
+              console.log(data)
+
+              reply.view('pages/profile', data).code(200);
+            });
           } else {
             reply.redirect("/");
           }
         });
       }
-    },
-    { // create a bookmark for the user- use the data value from bookmarked button
-      method: 'POST',
-      path: '/profile/bookmark',
-      handler: function (request, reply) {
-        authenticated(request, function (result) {
-          if (result.authenticated) {
-            var db = request.server.plugins['hapi-mongodb'].db;
-            var ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
-            var id = ObjectID(request.payload);
+    }
 
-            var data = {
-              //will need to put bookmarks here
-              authenticated: result.authenticated,
-              user: result.user,
-              bookmark: result.bookmark
-            }
-
-            reply.view('pages/profile', data).code(200);
-
-          } else {
-            reply.redirect("/");
-          }
-        });
-      }
-    },
   ]);
 
   next();

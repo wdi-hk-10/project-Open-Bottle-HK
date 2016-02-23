@@ -14,6 +14,7 @@ var plugins = [
   { register: require('inert')}, // public files hosting
   { register: require('./routes/pages.js')},
   { register: require('./routes/api/auth.js')},
+  { register: require('./routes/api/bookmarks.js')},
     // { register: require('./routes/api/user.js')},
   { register: require('hapi-mongodb'), // setup the mongo connect
     options: {

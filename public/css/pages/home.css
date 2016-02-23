@@ -83,3 +83,7 @@ img {
 div.thumbnail {
   height: 425px;
 }
+
+#elem-bookmark {
+  background-color: black;
+}

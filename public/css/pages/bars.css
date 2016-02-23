@@ -26,15 +26,12 @@
   background-color: black;
 }
 
-#bar-image {
-  width: 45%;
-  margin: 0 auto;
-  padding: 10px;
-  height: 300px;
-  background-color: blue;
-}
+/*bar-image >img*/
 
-#bar-image >img {
+
+
+
+#first-image {
   object-fit: cover;
   width: 45%;
   margin: 0 auto;
@@ -42,14 +39,8 @@
   height: 200px;
 }
 
-/*#first-image {
-  width: 45%;
-  margin: 0 auto;
-  padding: 0px;
-  height: 300px;
 
-}*/
-#flickr-image {
+#second-image {
   object-fit: cover;
   width: 45%;
   margin: 0 auto;

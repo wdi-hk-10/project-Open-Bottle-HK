@@ -6,14 +6,24 @@ THIS IS THE INDIVIDUAL USER PAGE
 
 <div id="home-opennow">
   <h3>OPEN BOTTLE NOW<br>
-  YOUR HAPPY HOUR BOOKMARKS</h3>
-  <div id="user-details">
+  HAPPY HOUR DEALS RIGHT NOW IN HK</h3>
   <div class="container-fluid">
-  <div class="user-name-row">
-    <div class="col-lg-12 xs-12">
-      <span><h2><%= user.username %></h2></span>
-
-
-    </div>
+  <div class="bar-home-row">
+    <% if (bookmarks) {%>
+      <% bookmarks.forEach(function(bookmark){ %>
+        <% var bar = bookmark.bar %>
+        <div class="col-lg-3 xs-12">
+          <div class="thumbnail">
+            <a href="/bars/<%=bar._id%>"><img src="<%= bar.image %>" alt=""></a>
+            <span class="bar-name"><p><%= bar.name %></p></span>
+            <span class="bar-location"><p><%= bar.location %></p></span>
+            <span class="bar-deal"><p><%= bar.deal %></p></span>
+            <span class="bar-bookmark"><button class ="bar-bookmark-btn" data-id="<%= bar._id%>">Bookmark this</button></p></span>
+          </div>
+        </div>
+      <% }) %>
+    <% } else { %>
+<!-- INSERT ERROR MESSAGE NOW -->
+    <% } %>
   </div>
 </div>
