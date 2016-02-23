@@ -6,9 +6,11 @@
 
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
   <script src="/public/js/layouts/layout.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
   <link rel="stylesheet" href="/public/css/layouts/layout.css">
 </head>
 <body>
@@ -38,7 +40,7 @@
             <li><button id="signin-btn" class ="btn btn-warning"  data-toggle="modal" data-target="#signInModal"><span class="glyphicon glyphicon-user"> SIGN IN </a></button></li>
             <li><button id="signup-btn" class ="btn btn-warning" data-toggle="modal" data-target="#signUpModal"><span class="glyphicon glyphicon-pencil"> SIGN UP </a></button></li>
           <% } else { %>
-            <li><span><a href="/profile"><h2><%= user.username %></h2></span></li>
+            <li><span><a href="/profile"><h2><%= user.username %></h2></a></span></li>
             <li><button id="signout-btn" class="btn btn-warning">Sign Out</button></li>
           <% } %>
         </ul>
