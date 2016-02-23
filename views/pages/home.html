@@ -60,7 +60,7 @@
 
 <div class="container-fluid">
 <div id="home-opennow">
-  <h3>OPEN BOTTLE NOW<br>
+  <span><h3>OPEN BOTTLE NOW</span><br>
   HAPPY HOUR DEALS RIGHT NOW IN HK</h3>
   <div class="bar-home-row">
     <% if (bars) {%>
@@ -72,7 +72,7 @@
             <span class="elem-location"><p><%= elem.location %></p></span>
             <span class="elem-deal"><p><%= elem.deal %></p></span>
             <span class="elem-bookmark">
-              <button class ="elem-bookmark-btn" data-id="<%= elem._id%>">Bookmark this</button>
+              <button class ="elem-bookmark-btn" data-id="<%= elem._id%>">Bookmark this</span></button>
             </span>
           </div>
         </div>

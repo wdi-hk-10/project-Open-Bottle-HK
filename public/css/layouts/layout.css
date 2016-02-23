@@ -33,3 +33,17 @@ div.modal-body {
 h2 {
   font-size:18px;
 }
+
+.glyphicon {
+    word-spacing: -0.5em;
+
+    &:before {
+        padding-right: 0.5em;
+    }
+}
+
+.logo {
+  height: 55px;
+  width: 189px;
+  margin-top: -19px;
+}
