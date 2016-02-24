@@ -44,4 +44,57 @@ $(document).ready(function() {
     });
   }
   bookmarkedBar();
+
+  var setFilterValFromStorage = function($filter, storageKey, defaultVal) {
+      var localValue = localStorage[storageKey];
+      if (localValue) {
+        $filter.selectpicker().selectpicker('val', localValue);
+      } else {
+        localStorage.setItem(storageKey, defaultVal);
+      }
+    };
+
+  var $selectDay = $("#select-day");
+  var $selectTime = $("#select-time");
+  var $selectLocation = $("#select-location");
+  var $selectPrice = $("#select-price");
+  var $selectDrink = $("#select-drink");
+  var $selectFeatures = $("#select-features");
+
+  $selectDay.off().on('change', function(){
+    localStorage.obhkDay = $selectDay.val();
+  });
+
+  $selectTime.off().on('change', function(){
+    localStorage.obhkTime = $selectTime.val();
+  });
+
+  $selectLocation.off().on('change', function(){
+    localStorage.obhkLocation = $selectLocation.val();
+  });
+
+  $selectPrice.off().on('change', function(){
+    localStorage.obhkPrice = $selectPrice.val();
+  });
+
+  $selectDrink.off().on('change', function(){
+    localStorage.obhkDrink = $selectDrink.val();
+  });
+
+  $selectFeatures.off().on('change', function(){
+    localStorage.obhkFeatures = $selectFeatures.val();
+  });
+
+  setFilterValFromStorage($selectDay, "obhkDay", "All days");
+
+  setFilterValFromStorage($selectTime, "obhkTime", "All times");
+
+  setFilterValFromStorage($selectLocation, "obhkLocation", "All locations");
+
+  setFilterValFromStorage($selectPrice, "obhkPrice", "All prices");
+
+  setFilterValFromStorage($selectDrink, "obhkDrink", "All drinks");
+
+  setFilterValFromStorage($selectFeatures, "obhkFeatures", "All features");
+
 });

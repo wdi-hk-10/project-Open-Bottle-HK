@@ -1,3 +1,4 @@
+<script src="/public/js/moment.min.js"></script>
 <script src="/public/js/pages/bars.js"></script>
 <link rel="stylesheet" href="/public/css/pages/bars.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
@@ -26,9 +27,18 @@
           <div id="bar-description" class="col-lg-8 col-md-8 col-xs-12">
             <span><h2>Bar details</h2></span>
             <span><p>Deal: <%= bar.deal %></p></span>
-            <span><p>Start Time: <%= bar.startTime %></p></span>
-            <span><p>End Time: <%= bar.endTime %></p></span>
-            <span><p>Features: <%= bar.features %></p></span>
+
+            <% var startTimeStr = bar.startTime.toString() %>
+            <% var startTime    = startTimeStr.length < 4 ? "0" + startTimeStr : startTimeStr; %>
+            <span><p>Start Time: <span id="start-time"><%= startTime %></span></p></span>
+
+            <% var endTimeStr = bar.endTime.toString() %>
+            <% var endTime    = endTimeStr.length < 4 ? "0" + endTimeStr : endTimeStr; %>
+            <span><p>End Time: <span id="end-time"><%= endTime %></span></p></span>
+
+            <% if (bar.features != 0) { %>
+              <span><p>Features: <%= bar.features %></p></span>
+            <% } %>
           </div>
           <div id="bar-address" class="col-lg-4 col-md-8 col-xs-12">
             <span><h2>Address:<br></h2><p> <%= bar.address %></p></span>
