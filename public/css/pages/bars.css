@@ -23,7 +23,11 @@ img {
   width:584px;
   object-fit: cover;
   padding:0px;
+}
 
+.deal {
+  background:black;
+  color:white;
 }
 
 #first-image {
