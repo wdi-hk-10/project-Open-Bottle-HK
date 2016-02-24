@@ -6,8 +6,17 @@
   width: 100%;
   margin: 0 auto;
   padding: 0px;
-  height: 300px;
-  background-color: black;
+  height: 360px;
+  background: url("http://i63.tinypic.com/2usyc88.png");
+  background-size:100%;
+  background-position:center;
+  background-repeat:none;
+  margin-bottom:20px;
+}
+
+#empty-space {
+  height:40px;
+  color:#f9eac7;
 }
 
 #bookmarked {
@@ -38,6 +47,7 @@ div.container-fluid {
 
 body {
   background-color: #f9eac7;
+
 }
 h1 {
   color: white;
@@ -89,9 +99,20 @@ img {
 }
 
 div.thumbnail {
-  height: 425px;
+  height: 440px;
+  position: relative;
 }
 
 #elem-bookmark {
   background-color: black;
+}
+
+
+button.remove-btn {
+  background-color: black;
+  position: absolute;
+/*  top: 100px;*/
+  bottom: 5px;
+  left: 100px;
+  text-align:center;
 }
