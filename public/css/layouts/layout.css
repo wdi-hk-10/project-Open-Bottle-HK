@@ -1,0 +1,49 @@
+#navbar.navbar-default {
+  background: black;
+  color: white;
+}
+
+#signin-btn {
+  margin-top:8px;
+  margin-right:3px;
+  color: black;
+  font-weight: bold;
+}
+
+#signup-btn {
+  margin-top:8px;
+  margin-left:3px;
+  font-weight: bold;
+}
+
+#signout-btn {
+  margin-left: 6px;
+  margin-top:8px;
+  font-weight: bold;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #F0AD4E;
+}
+
+div.modal-body {
+  margin-left: 30px;
+}
+
+h2 {
+  font-size:18px;
+}
+
+.glyphicon {
+    word-spacing: -0.5em;
+
+    &:before {
+        padding-right: 0.5em;
+    }
+}
+
+.logo {
+  height: 55px;
+  width: 189px;
+  margin-top: -19px;
+}

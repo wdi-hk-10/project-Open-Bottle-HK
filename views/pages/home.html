@@ -1,0 +1,105 @@
+<div id="home-page-header">
+  <div class="row">
+    <div id="home-filter-bar"> <!-- WRAP THIS IN A FORM -->
+      <select id="select-day" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary" title="All days">
+        <option data-icon="glyphicon-list-alt" value="">All days</option>
+        <option class="day-monday">Monday</option>
+        <option class="day-tuesday">Tuesday</option>
+        <option class="day-wednesday">Wednesday</option>
+        <option class="day-thursday">Thursday</option>
+        <option class="day-friday">Friday</option>
+        <option class="day-saturday">Saturday</option>
+        <option class="day-sunday">Sunday</option>
+      </select>
+      <select id="select-time" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary" title="All times">
+        <option data-icon="glyphicon-time" value="">All times</option>
+        <option class="time-before5" value="1659">Before 5pm</option>
+        <option class="time-5pm" value="1700">5pm</option>
+        <option class="time-6pm" value="1800">6pm</option>
+        <option class="time-7pm" value="1900">7pm</option>
+        <option class="time-8pm" value="2000">8pm</option>
+        <option class="time-9pm" value="2100">9pm</option>
+        <option class="time-10pm" value="2200">10pm</option>
+        <option class="time-11pm" value="2300">11pm</option>
+      </select>
+      <select id="select-location" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary" title="All locations">
+        <option data-icon="glyphicon-screenshot" value="">All locations</option>
+        <option class="loc-ifc">Admiralty</option>
+        <option class="loc-causewaybay">Causeway Bay</option>
+        <option class="loc-central">Central</option>
+        <option class="loc-ifc">IFC</option>
+        <option class="loc-lkf">Lan Kwai Fong</option>
+        <option class="loc-soho">Soho</option>
+        <option class="loc-lkf">Sheung Wan</option>
+        <option class="loc-wanchai">Wan Chai</option>
+
+      </select>
+      <select id="select-price" class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary" title="All prices">
+        <option data-icon="glyphicon-usd" class="all-prices" value="">All prices</option>
+        <option class="under50" value="50">Under 50 HKD</option>
+        <option class="under100" value="100">Under 100 HKD</option>
+        <option class="under200" value="200">Under 200 HKD</option>
+        <option class="under300" value="300">Under 300 HKD</option>
+        <option class="under400" value="400">Under 400 HKD</option>
+        <option class="under500" value="500">Under 500 HKD</option>
+      </select>
+      <select id="select-drink"class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary" title="All drinks">
+        <option data-icon="glyphicon-glass" class="all-drink" value="">All drinks</option>
+        <option class="wine">Wine</option>
+        <option class="beer">Beer</option>
+        <option class="champagne">Champagne</option>
+        <option class="champagne">Cocktails</option>
+        <option class="spirits">Spirits</option>
+      </select>
+      <select id="select-features"class="selectpicker col-md-2 col-sm-12 col-xs-12" data-width="fit" data-style="btn-primary" title="All features">
+        <option data-icon="glyphicon-thumbs-up" class="all-features" value="">All features</option>
+        <option class="">2 for 1</option>
+        <option class="">Free food</option>
+        <option class="">Free flow</option>
+      </select>
+    <button id="filter-button" class="btn btn-warning">SUBMIT</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+<div id="home-opennow">
+  <span><h3>OPEN BOTTLE NOW</span><br>
+  HAPPY HOUR DEALS RIGHT NOW IN HK</h3>
+  <div class="bar-home-row">
+    <% if (bars) {%>
+      <% bars.forEach(function(elem){ %>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="thumbnail">
+            <a href="/bars/<%=elem._id%>"><img src="<%= elem.image %>" alt=""></a>
+            <span class="elem-name"><p><%= elem.name %></p></span>
+            <span class="elem-location"><p><%= elem.location %></p></span>
+            <span class="elem-deal"><p><%= elem.deal %></p></span>
+            <span class="elem-bookmark">
+              <button class ="elem-bookmark-btn" data-id="<%= elem._id%>">Bookmark this</span></button>
+            </span>
+          </div>
+        </div>
+      <% }) %>
+    <% } else { %>
+<!-- INSERT ERROR MESSAGE NOW -->
+    <% } %>
+  </div>
+</div>
+
+<script src="/public/js/pages/home.js"></script>
+<link rel="stylesheet" href="/public/css/pages/home.css">
+
+<!-- // this was the code for the flickr to get the images to appear in a grid format - can i use this on the above? -->
+<!-- data.items.forEach(function(item, index){
+      var $img = $('<img>').attr('src', item.media.m).addClass('thumbnail');
+      if (index % 4 === 0) {
+        $row = $('<div class="row">').appendTo($images);
+      }
+      var $col = $('<div class="col-lg-3">').appendTo($row);
+      $col.append($img); -->
+
+
+
+
+

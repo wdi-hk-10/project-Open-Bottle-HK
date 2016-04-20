@@ -1,0 +1,51 @@
+<script src="/public/js/moment.min.js"></script>
+<script src="/public/js/pages/bars.js"></script>
+<link rel="stylesheet" href="/public/css/pages/bars.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12"><span class="bar-name"><h1><%= bar.name %></h1></span></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12"><span class="bar-district"><h2>- <%= bar.location %> -</h2></span></div>
+  </div>
+
+  <div id="images-row" class="row">
+    <div id="first-image" class="col-lg-6 col-xs-6">
+      <img src="<%= bar.image %>" alt=""></div>
+    <div id="second-image" class="col-lg-6 col-xs-6"><img src="<%= bar.imageTwo %>" alt=""></div>
+  </div>
+
+    <div class="row">
+      <div id="empty-row">
+<!--           <div id="map" class="col-lg-6 col-xs-12"><span><h2>map</h2></span></div> -->
+        <div class="bar-details">
+          <div id="bar-description" class="col-lg-8 col-md-8 col-xs-12">
+            <span><h2>Bar details:</h2></span>
+            <span><p>Deal: <%= bar.deal %></p></span>
+
+            <% var startTimeStr = bar.startTime.toString() %>
+            <% var startTime    = startTimeStr.length < 4 ? "0" + startTimeStr : startTimeStr; %>
+            <span><p>Start Time: <span id="start-time"><%= startTime %></span></p></span>
+
+            <% var endTimeStr = bar.endTime.toString() %>
+            <% var endTime    = endTimeStr.length < 4 ? "0" + endTimeStr : endTimeStr; %>
+            <span><p>End Time: <span id="end-time"><%= endTime %></span></p></span>
+
+            <% if (bar.features != 0) { %>
+              <span><p>Features: <%= bar.features %></p></span>
+            <% } %>
+          </div>
+          <div id="bar-address" class="col-lg-4 col-md-8 col-xs-12">
+            <span><h2>Address:<br></h2><p> <%= bar.address %></p></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

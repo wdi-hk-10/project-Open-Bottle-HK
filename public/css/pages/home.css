@@ -1,0 +1,110 @@
+#home-page-header {
+  height: 350px;
+  background-image: url("http://shafir.info/shafir_images/10Album/22Hong_Kong~10Volume_3~105Night~100Kowloon_1%5E1920x.jpg");
+  background-size: 100%;
+  background-position: cover;
+  margin-top: -20px;
+}
+
+#added {
+  color: red;
+}
+
+#home-filter-bar {
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 130px;
+}
+
+#filter-button {
+  color: black;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#home-opennow {
+  background: black;
+/*  width: 100%;*/
+  height: 50px;
+  color: white;
+  text-align: center;
+  margin: -20px;
+}
+
+.bar-home-row {
+  margin-left: 20px;
+}
+body {
+  background-color: #f9eac7;
+}
+h1 {
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  color: black;
+  font-size: 14px;
+  font-weight:bold;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  box-sizing: none;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+  height: 274.50px;
+  object-fit: cover;
+}
+
+.elem-name>p {
+  font-weight: bold;
+  font-size: 19px;
+  text-transform:uppercase;
+}
+
+.elem-location>p {
+/*  font-weight: bold;*/
+  font-size:15px;
+  margin-top:-3px;
+  color: white;
+  background: black;
+}
+
+.elem-deal>p {
+  font-size:14px;
+}
+
+div.thumbnail {
+  height: 450px;
+  position: relative;
+
+}
+
+button.elem-bookmark-btn {
+  background-color: black;
+  position: absolute;
+/*  top: 100px;*/
+  bottom: 5px;
+  left: 100px;
+  text-align:center;
+}
+
+.glyphicon {
+    font-weight:bold;
+    word-spacing: -0.5em;
+
+    &:before {
+        padding-right: 0.5em;
+    }
+}

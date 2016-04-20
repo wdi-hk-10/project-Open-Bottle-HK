@@ -1,0 +1,39 @@
+<script src="/public/js/pages/profile.js"></script>
+<link rel="stylesheet" href="/public/css/pages/profile.css">
+
+
+
+<div id="container-fluid">
+  <div id="bookmarked"><h3>YOUR BOOKMARKS</h3></div>
+<!-- MAP -->
+
+  <div id="home-row">
+    <div id="map" class="col-lg-12 col-xs-12">
+    </div>
+  </div>
+</div>
+
+<!--   <div>
+    <span class="home-opennow-row">YOUR BOOKMARKS</span>
+  </div>
+</div> -->
+
+  <div class="bar-home-row">
+    <% if (bookmarks) {%>
+      <% bookmarks.forEach(function(bookmark){ %>
+        <% var bar = bookmark.bar %>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+          <div class="thumbnail">
+            <a href="/bars/<%=bar._id%>"><img src="<%= bar.image %>" alt=""></a>
+            <span class="bar-name"><p><%= bar.name %></p></span>
+            <span class="bar-location"><p><%= bar.location %></p></span>
+            <span class="bar-deal"><p><%= bar.deal %></p></span>
+            <span class="bar-deal"><p><button class="remove-btn" data-id="<%= bar._id%>">Remove bookmark</button></p></span>
+          </div>
+        </div>
+      <% }) %>
+    <% } else { %>
+<!-- INSERT ERROR MESSAGE NOW -->
+    <% } %>
+  </div>
+</div>
